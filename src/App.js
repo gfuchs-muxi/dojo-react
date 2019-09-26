@@ -4,6 +4,7 @@ import './App.css';
 
 import { JuliusButton, DojoButton } from './atoms/button'
 import MainTemplate from './templates/main'
+import CustomPaginationActionsTable from "./tableExample"
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
 
         <JuliusButton />
         <DojoButton>TESTE</DojoButton>
+        <CustomPaginationActionsTable rows={["teste", "teste", "teste"]}/>
       </div>
     );
   }
