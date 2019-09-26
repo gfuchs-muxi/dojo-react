@@ -14,7 +14,14 @@ class App extends Component {
 
         <JuliusButton />
         <DojoButton>TESTE</DojoButton>
-        <CustomPaginationActionsTable rows={["teste", "teste", "teste"]}/>
+        <CustomPaginationActionsTable 
+          data={{
+                "titles": ["title", "title2"],
+                "rows": [{"title": "teste", "title2": "aaaa"}, 
+                       {"title": "teste", "title2": "aaaa"}, 
+                       {"title": "teste", "title2": "aaaaaa"}]
+            }}
+          />
       </div>
     );
   }

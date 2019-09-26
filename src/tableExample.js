@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
+import { TableCell, TableHead } from '@material-ui/core';
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
@@ -31,10 +31,23 @@ export default function CustomPaginationActionsTable(props) {
     <Paper>
       <div>
         <Table>
-          <TableBody>
-            {props.rows.map(row => (
+        <TableHead>
+            <TableRow>
+              {
+                  props.data.titles.map(title => (
+                    <TableCell align="center">{title}</TableCell>
+                )) 
+              }
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            {props.data.rows.map(row => (
               <TableRow>
-                <TableCell align="right">{row}</TableCell>
+                {
+                    props.data.titles.map(cell => (
+                        <TableCell align="center">{row[cell]}</TableCell>
+                    ))     
+                }           
               </TableRow>
             ))} 
           </TableBody>
